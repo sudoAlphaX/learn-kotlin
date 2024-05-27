@@ -1,4 +1,4 @@
-## Collections
+# Collections
 
 Collections is a type of variable which can be used to multiple data. It is commonly used to group data into structures.
 
@@ -9,7 +9,7 @@ Types of collections:
 3. Maps: Key, value pairs that are unique and map to only one value
 
 
-### List
+## List
 
 There are two types of lists:
 1. `listOf()`: Read only list (`List`)
@@ -38,7 +38,7 @@ val animalsLocked: List<String> = animals
 //animalsLocked is a read-only list of animals
 ```
 
-#### Operations on a List
+### Operations on a List
 
 `val colors: List<String> = listOf("red", "blue", "aoi", "sora")`
 
@@ -77,3 +77,126 @@ println("pink" in colors)
 
 * `.remove() to remove an element`
 `colorsrw.remove("sora")`
+
+
+## Set
+
+1. `setOf()`: Read-only set (`Set`)
+2. `mutableSetOf()`: Mutable set (`MutableSet`)
+
+```
+val readOnlyFruit = setOf("apple", "banana", "cherry")
+
+val fruit: MutableSet<String> = mutableSetOf("apple", "banana", "banana", "tomato")
+
+println(fruit)
+// ["apple", "banana", "cherry"]
+// Only one banana item is present because set contains only unique elements
+```
+
+* Casting can be done to sets too
+
+```
+val fruits: MutableSet<String> = mutableSetOf("tomato", "apple", "cherry")
+val lockedFruits: Set<String> = fruits
+```
+
+* Since sets are unordered, items cannot be accessed using an index
+
+### Operations on a set
+
+`val fruits: Set<String> = setOf("apple", "cherry", "tomato")`
+
+1. `.count()` to get the number of items in a set
+
+`println("Number of elements in set fruits: ${fruits.count()}")`
+
+2. `in` operator to check if item is in set
+
+`println("banana" in fruits)`
+// false
+
+3. `.add()` and `.remove()` to add or remove elements from a set
+
+```
+fruit.add("dragonfruit")
+fruit.remove("cherry")
+println(fruits)
+// ["tomato", "apple", "dragonfruit"]
+```
+
+
+## Map
+
+Maps can be used to store key-value pairs.
+Items in a map must be accessed by referencing the key.
+
+1. `mapOf()`: Read-only map (`Map`)
+2. 'mutableMapOf()': Mutable map (`MutableMap`)
+
+```
+val readOnlyMenu = mapOf("apple" to 100, "banana" to 200, "orange" to 175)
+
+val menu: MutableMap<String, Int> = readOnlyMenu
+println(menu)
+// {apple=100, banana=200, orange=175}
+```
+
+To explicitly declare the type of a map, use maptype followed by the type of both the variables seperated by a comma (,) in the angle brackets <>
+
+`val menu: Map<String, Int> = mapof("apple" to 140, "pineapple" to 125)`
+
+* Casting can be used to maps too
+
+### Operation in a map
+
+`val menu: Map<String, Int> = mapof("apple" to 140, "pineapple" to 125)`
+
+1. Access a value (using its key):
+
+Use indexed access operator `[]`
+`println("The value of apple is: ${menu["apple"]}")`
+
+2. `.count()` to get number of items:
+
+`println("Number of items in menu is: ${menu.count()}")`
+
+3. `.put()` and `.remove()` to modify items in a map:
+
+```
+val freeMenu: MutableMap<String, Int> = menu
+
+freeMenu.put("kiwi", 300)
+freeMenu.remove("apple")
+
+println(freeMenu)
+// {"pineapple"=125, "kiwi"=300}
+```
+
+4. `.containsKey()` to check if key is included in map:
+
+```println(menu.containsKey("pineapple"))
+// true
+```
+
+5. `.keys` and `.values` to obtain keys or values as a list
+
+```
+println(menu.keys)
+// [apple, pineapple]
+
+println(menu.values)
+// [140, 125]
+```
+
+6. `in` operator to check if key or value in map:
+
+_Fundamentally, it is an operation on a list_
+
+```
+println("orange" in menu.keys)
+// false
+
+println(140 in menu.values)
+// true
+```
