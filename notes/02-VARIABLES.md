@@ -1,4 +1,4 @@
-### Variables
+# Variables
 
 There are 2 types of variable declaration
 
@@ -15,7 +15,7 @@ var b = 7
 b = 8
 ```
 
-#### String Templates
+### String Templates
 
 You can insert a variable into a string using curly braces `{var}`.
 
@@ -26,7 +26,7 @@ print("The name is {name}")
 // Output: The name is John
 ```
 
-### Variable Types
+## Variable Types
 
 Every Kotlin variable has a type. If not specified explicitly, Kotlin will automatically infer a variable type.
 
