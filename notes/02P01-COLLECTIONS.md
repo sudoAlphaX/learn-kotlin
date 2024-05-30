@@ -75,7 +75,7 @@ println("pink" in colors)
 * `.add()` to add an element
 `colorsrw.all("mauve")`
 
-* `.remove() to remove an element`
+* `.remove()` to remove an element
 `colorsrw.remove("sora")`
 
 
