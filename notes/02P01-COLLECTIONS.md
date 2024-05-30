@@ -51,7 +51,7 @@ val animalsLocked: List<String> = animals
 // You can also use .first() to get the first item in a list: red
 
 `println("To access the last element, use .last(): ${colors.last()}")`
-// To aaccess the last element, use .last(): sora
+// To access the last element, use .last(): sora
 
 2. Number of items:
 
