@@ -73,7 +73,7 @@ println("pink" in colors)
 `val colorsrw: MutableList<String> = colors`
 
 * `.add()` to add an element
-`colorsrw.all("mauve")`
+`colorsrw.add("mauve")`
 
 * `.remove()` to remove an element
 `colorsrw.remove("sora")`
